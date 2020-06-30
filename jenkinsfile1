@@ -1,0 +1,15 @@
+node('master') {
+
+   stage("git") {
+       git 'https://github.com/nurimankg/ansible-test.git'
+   }
+   
+   stage("whoami") {
+       sh "whoami"
+       sh "sudo cp /root/git/ansible-test/httpd.yaml ${WORKSPACE}/"
+     }
+     
+   stage("whoami") {
+       sh "sudo ansible-playbook httpd.yaml"
+     }
+}
