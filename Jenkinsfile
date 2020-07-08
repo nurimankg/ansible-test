@@ -1,8 +1,6 @@
 // Jenkinsfile (Declarative Pipeline)
 pipeline {
-   agent { node { label 'mysql_node' }
-   }
-
+   agent any
    stages {
      stage("pwd"){
        steps{
